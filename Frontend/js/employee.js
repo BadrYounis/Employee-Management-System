@@ -11,8 +11,6 @@ window.onload = () => {
   loadEmployees();
 };
 
-// GET + SEARCH
-
 async function loadEmployees() {
   let search = document.getElementById("searchInput").value;
 
@@ -55,10 +53,7 @@ ${
 
 </td>
 
-
-
 <td>
-
 
 <button 
 class="btn btn-warning btn-sm"
@@ -68,8 +63,6 @@ Edit
 
 </button>
 
-
-
 <button 
 class="btn btn-danger btn-sm"
 onclick="deleteEmployee(${e.id})">
@@ -77,7 +70,6 @@ onclick="deleteEmployee(${e.id})">
 Delete
 
 </button>
-
 
 <button
 class="btn btn-secondary btn-sm"
@@ -144,9 +136,7 @@ async function saveEmployee() {
 
       body: JSON.stringify(employee),
     });
-  }
-
-  else {
+  } else {
     employee = {
       fullName: document.getElementById("fullName").value,
 

@@ -1,136 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
-<head>
+  <head>
     <title>Employee Management</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-    <link href="css/style.css" rel="stylesheet">
-</head>
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
 
-
-<body>
-
-
+  <body>
     <div class="container mt-5">
+      <h2 class="mb-4">Employee Management System</h2>
 
-
-        <h2 class="mb-4">
-            Employee Management System
-        </h2>
-
-
-        <div class="row mb-3">
-
-            <div class="col-md-8">
-
-                <input id="searchInput" class="form-control" placeholder="Search Employee" onkeyup="loadEmployees()">
-
-            </div>
-
-
-            <div class="col-md-4 text-end">
-
-                <button class="btn btn-primary" onclick="openAddModal()" data-bs-toggle="modal"
-                    data-bs-target="#employeeModal">
-
-                    + Add Employee
-
-                </button>
-
-            </div>
-
-
+      <div class="row mb-3">
+        <div class="col-md-8">
+          <input
+            id="searchInput"
+            class="form-control"
+            placeholder="Search Employee"
+            onkeyup="loadEmployees()"
+          />
         </div>
 
+        <div class="col-md-4 text-end">
+          <button
+            class="btn btn-primary"
+            onclick="openAddModal()"
+            data-bs-toggle="modal"
+            data-bs-target="#employeeModal"
+          >
+            + Add Employee
+          </button>
+        </div>
+      </div>
 
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Job</th>
+            <th>Hire Date</th>
+            <th>Department</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
 
-        <table class="table table-bordered table-striped">
-
-            <thead>
-
-                <tr>
-
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Job</th>
-                    <th>Hire Date</th>
-                    <th>Department</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-
-                </tr>
-
-            </thead>
-
-
-            <tbody id="employeeTable">
-
-            </tbody>
-
-
-        </table>
-
-
+        <tbody id="employeeTable"></tbody>
+      </table>
     </div>
-
 
     <!-- MODAL -->
 
     <div class="modal fade" id="employeeModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 id="modalTitle">Add Employee</h5>
+          </div>
 
-        <div class="modal-dialog">
+          <div class="modal-body">
+            <input type="hidden" id="employeeId" />
 
-            <div class="modal-content">
+            <input
+              id="fullName"
+              class="form-control mb-2"
+              placeholder="Full Name"
+            />
 
-                <div class="modal-header">
+            <input id="email" class="form-control mb-2" placeholder="Email" />
 
-                    <h5 id="modalTitle">
-                        Add Employee
-                    </h5>
+            <input
+              id="phoneNumber"
+              class="form-control mb-2"
+              placeholder="Phone"
+            />
 
-                </div>
+            <input
+              id="jobTitle"
+              class="form-control mb-2"
+              placeholder="Job Title"
+            />
 
-                <div class="modal-body">
+            <input id="hireDate" type="date" class="form-control mb-2" max="" />
 
-                    <input type="hidden" id="employeeId">
+            <input
+              id="departmentId"
+              type="number"
+              class="form-control"
+              placeholder="Department ID"
+              min="1"
+            />
+          </div>
 
-                    <input id="fullName" class="form-control mb-2" placeholder="Full Name">
-
-                    <input id="email" class="form-control mb-2" placeholder="Email">
-
-                    <input id="phoneNumber" class="form-control mb-2" placeholder="Phone">
-
-                    <input id="jobTitle" class="form-control mb-2" placeholder="Job Title">
-
-                    <input id="hireDate" type="date" class="form-control mb-2" max="">
-
-                    <input id="departmentId" type="number" class="form-control" placeholder="Department ID" min="1">
-
-                </div>
-
-                <div class="modal-footer">
-
-                    <button class="btn btn-success" onclick="saveEmployee()">
-
-                        Save
-
-                    </button>
-
-                </div>
-
-            </div>
-
+          <div class="modal-footer">
+            <button class="btn btn-success" onclick="saveEmployee()">
+              Save
+            </button>
+          </div>
         </div>
-
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="js/employee.js"></script>
-
-</body>
-
+  </body>
 </html>

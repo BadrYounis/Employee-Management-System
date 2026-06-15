@@ -70,18 +70,61 @@ dotnet ef database update
 
 to create the database.
 
-### 5. Run the Application
+## Running the Project
 
-Run:
+### 1. Run the Backend API
+
+Navigate to the backend project folder:
+
+```bash
+cd ManagementSystem
+```
+
+Restore packages:
+
+```bash
+dotnet restore
+```
+
+Apply database migrations:
+
+```bash
+dotnet ef database update
+```
+
+Run the API:
 
 ```bash
 dotnet run
 ```
 
-The API will start on:
+The API will start at:
 
-```
+```text
 https://localhost:<port>
+```
+
+Make sure the API is running before starting the frontend.
+
+
+### 2. Run the Frontend
+
+Open another terminal and navigate to the frontend folder:
+
+```bash
+cd Frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the frontend:
+
+```bash
+npm run dev
 ```
 
 ## API Endpoints
@@ -163,3 +206,26 @@ Employee
 - API uses DTOs for requests and responses
 - Mapster is used for object mapping
 - FluentValidation handles request validation
+
+## Screenshots
+
+### Employees Page
+![Employees Page](Screenshots/employees%20page.png)
+
+### Create Employee
+![Create Employee](Screenshots/create%20employees.png)
+
+## Edit Employee
+![Edit Employee](Screenshots/edit%20employees.png)
+
+## Toggle Status
+![Toggle Employee Status](Screenshots/toggle%20status.png)
+
+### Search
+![Search](Screenshots/search.png)
+
+### API Endpoints
+![Swagger](Screenshots/swagger.png)
+
+### API Schemas
+![Schemas](Screenshots/schemas.png)
